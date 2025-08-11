@@ -99,9 +99,9 @@ const StoryQuestLanding = () => {
               </h1>
 
               <p className="text-xl text-amber-700 leading-relaxed">
-                BokoboBot StoryQuest transforms children's thoughts and feelings
-                into meaningful tales with valuable life lessons, helping them
-                navigate emotions and develop social skills.
+                BokoboBot StoryQuest transforms children&apos;s thoughts and
+                feelings into meaningful tales with valuable life lessons,
+                helping them navigate emotions and develop social skills.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -117,9 +117,9 @@ const StoryQuestLanding = () => {
               </div>
 
               <div className="text-sm text-amber-600 italic">
-                "If it takes a village to raise a child, it will take a
+                &quot;If it takes a village to raise a child, it will take a
                 Bokobokids village to raise the next generation of global
-                citizens."
+                citizens.&quot;
               </div>
             </div>
 
@@ -154,7 +154,7 @@ const StoryQuestLanding = () => {
               How It Works
             </h2>
             <p className="text-xl text-amber-700 max-w-3xl mx-auto">
-              Three simple steps to transform your child's emotions into
+              Three simple steps to transform your child&apos;s emotions into
               meaningful stories
             </p>
           </div>
@@ -292,8 +292,8 @@ const StoryQuestLanding = () => {
               <BookOpen className="w-16 h-16 mx-auto mb-6 text-orange-300" />
               <h3 className="text-2xl font-bold mb-4">Parents</h3>
               <p className="text-orange-100 leading-relaxed">
-                Support your child's emotional development at home with stories
-                that address their specific feelings and concerns.
+                Support your child&apos;s emotional development at home with
+                stories that address their specific feelings and concerns.
               </p>
             </div>
           </div>
@@ -304,7 +304,7 @@ const StoryQuestLanding = () => {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-amber-900 mb-6">
-            Start Your Child's Emotional Learning Journey Today
+            Start Your Child&apos;s Emotional Learning Journey Today
           </h2>
           <p className="text-xl text-amber-700 mb-8 leading-relaxed">
             Join thousands of children, parents, and educators who are using

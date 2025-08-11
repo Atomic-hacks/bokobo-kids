@@ -122,9 +122,9 @@ const MovementSection = () => {
 
             <div className="relative z-10">
               <blockquote className="text-3xl lg:text-4xl font-medium text-amber-900 italic leading-relaxed mb-6">
-                "If it takes a village to raise a child, it will take a
+               &quot;If it takes a village to raise a child, it will take a
                 Bokobokids village to raise the next generation of global
-                citizens."
+                citizens.&quot;
               </blockquote>
               <cite className="text-orange-700 font-bold text-lg">
                 — Bokobokids Village Philosophy
@@ -446,13 +446,13 @@ const BookFeatureSection = () => {
                 className="text-5xl font-bold text-amber-900 mb-8 leading-tight"
                 style={{ fontFamily: "serif" }}
               >
-                "The Winds of Napata" And Its Modern Relevance
+               &quot;The Winds of Napata&quot; And Its Modern Relevance
               </h2>
             </div>
 
             <div className="space-y-6 text-amber-800 leading-relaxed mb-10 text-lg">
               <p>
-                Dr. Kheftusa Akhiba Ankh's <em>The Winds of Napata</em> is a
+                Dr. Kheftusa Akhiba Ankh&apos;s <em>The Winds of Napata</em> is a
                 poignant tale that weaves African history, culture, and identity
                 into an immersive narrative designed to inspire and empower.
               </p>
@@ -573,8 +573,8 @@ const CTASection = () => {
           </h2>
 
           <p className="text-2xl text-amber-200 mb-16 max-w-4xl mx-auto leading-relaxed font-light">
-            Start your family's journey into African wisdom and cultural
-            empowerment. Together, we'll build a stronger future for our
+            Start your family&apos;s journey into African wisdom and cultural
+            empowerment. Together, we&apos;ll build a stronger future for our
             children through the power of ancestral knowledge.
           </p>
 
