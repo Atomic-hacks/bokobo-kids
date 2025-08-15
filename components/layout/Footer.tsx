@@ -1,273 +1,178 @@
-"use client";
+'use client'
+import React from 'react';
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, ArrowRight, Heart } from "lucide-react";
+const quickLinks = [
+  "About Us",
+  "Our Mission", 
+  "Cultural Programs",
+  "Educational Resources",
+  "Community Events",
+  "Parent Resources",
+];
+
+const programs = [
+  "Storytelling Circles",
+  "Cultural Workshops", 
+  "Youth Mentorship",
+  "Family Engagement",
+  "Educational Content",
+  "Book Discussions",
+];
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    if (email) {
-      setIsSubscribed(true);
-      setEmail("");
-      setTimeout(() => setIsSubscribed(false), 3000);
-    }
-  };
-
-  const quickLinks = [
-    "About Us",
-    "Our Mission",
-    "Cultural Programs",
-    "Educational Resources",
-    "Community Events",
-    "Parent Resources",
-  ];
-
-  const programs = [
-    "Storytelling Circles",
-    "Cultural Workshops",
-    "Youth Mentorship",
-    "Family Engagement",
-    "Educational Content",
-    "Book Discussions",
-  ];
-
   return (
-    <footer className="bg-neutral-900 text-white">
-      {/* Newsletter Section */}
-      <div className="border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 className="text-3xl font-bold mb-4">Stay Connected</h3>
-              <p className="text-gray-400 text-lg leading-relaxed">
-                Get updates on cultural events, new resources, and community
-                stories delivered to your inbox.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="relative flex-1">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="w-full px-6 py-4 bg-gray-800 border border-gray-700 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-amber-500 transition-colors duration-300"
-                    required
-                  />
-                  {isSubscribed && (
-                    <motion.div
-                      className="absolute inset-0 bg-green-600 rounded-full flex items-center justify-center"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      exit={{ scale: 0 }}
-                    >
-                      <span className="text-white font-semibold">
-                        ✓ Subscribed!
-                      </span>
-                    </motion.div>
-                  )}
-                </div>
-                <motion.button
-                  type="submit"
-                  className="bg-gradient-to-r from-amber-600 to-red-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 flex items-center justify-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  disabled={isSubscribed}
-                >
-                  Subscribe
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </motion.button>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
-          {/* Brand Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-600 to-red-600  flex items-center justify-center">
-                <span className="text-white font-bold text-xl">B</span>
-              </div>
-              <div>
-                <h1 className="font-bold text-xl text-white">Bokobokids</h1>
-                <p className="text-gray-400 text-sm">Village</p>
-              </div>
+    <footer className="bg-gray-50 relative overflow-hidden">
+      {/* Decorative top border */}
+      <div className="w-full h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-red-500"></div>
+      
+      {/* Floating decorative elements */}
+      <div className="absolute top-12 right-20 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[18px] border-b-emerald-500 opacity-30"></div>
+      <div className="absolute bottom-24 left-16 w-8 h-8 rounded-full border-2 border-pink-400 opacity-40"></div>
+      <div className="absolute top-32 left-1/4 w-3 h-3 bg-orange-400 rounded-full opacity-50"></div>
+      
+      <div className="max-w-7xl mx-auto px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          {/* Brand Section */}
+          <div className="lg:col-span-4 space-y-8">
+            <div className="relative">
+              {/* Small decorative triangle */}
+              <div className="absolute -top-2 -left-3 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[9px] border-b-emerald-500 opacity-60"></div>
+              
+              <h3 className="text-2xl font-black text-gray-900 tracking-tight relative">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
+                  BOKOBOKIDS
+                </span>
+                {/* Small dot decoration */}
+                <div className="absolute -bottom-1 -right-2 w-1.5 h-1.5 bg-pink-400 rounded-full opacity-70"></div>
+              </h3>
             </div>
-
-            <p className="text-gray-400 leading-relaxed mb-6">
-              Empowering the next generation with African ancient wisdom and
-              cultural heritage. Building global citizens rooted in their
-              identity and values.
+            
+            <p className="text-gray-600 leading-relaxed text-sm max-w-sm">
+              Nurturing young minds through culturally rich storytelling and educational experiences that celebrate African heritage and global perspectives.
             </p>
-
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-gray-400">
-                <Mail className="w-5 h-5 text-amber-500" />
-                <span>info@bokobokids.com</span>
+            
+            {/* Social indicators with subtle style */}
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span className="text-xs text-gray-500 font-medium tracking-wide">CONNECT</span>
               </div>
-              <div className="flex items-center space-x-3 text-gray-400">
-                <Phone className="w-5 h-5 text-amber-500" />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-400">
-                <MapPin className="w-5 h-5 text-amber-500" />
-                <span>Global Community</span>
+              <div className="w-px h-4 bg-gray-300"></div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
+                <span className="text-xs text-gray-500 font-medium tracking-wide">EXPLORE</span>
               </div>
             </div>
-          </motion.div>
-
+          </div>
+          
           {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h3 className="text-xl font-bold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={link}>
-                  <motion.a
-                    href="#"
-                    className="text-gray-400 hover:text-amber-500 transition-colors duration-300 flex items-center group"
-                    whileHover={{ x: 5 }}
-                  >
-                    <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    {link}
-                  </motion.a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Programs */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="text-xl font-bold mb-6">Our Programs</h3>
-            <ul className="space-y-3">
-              {programs.map((program, index) => (
-                <li key={program}>
-                  <motion.a
-                    href="#"
-                    className="text-gray-400 hover:text-amber-500 transition-colors duration-300 flex items-center group"
-                    whileHover={{ x: 5 }}
-                  >
-                    <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    {program}
-                  </motion.a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Community Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h3 className="text-xl font-bold mb-6">Global Community</h3>
-            <div className="space-y-6">
-              {[
-                { number: "10k+", label: "Families Connected" },
-                { number: "50+", label: "Cultural Stories" },
-                { number: "25+", label: "Countries Reached" },
-                { number: "100%", label: "Love & Wisdom" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  className="flex items-center space-x-3"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-600/20 to-red-600/20 2025 flex items-center justify-center border border-amber-600/30">
-                    <span className="text-amber-500 font-bold text-sm">
-                      {stat.number}
-                    </span>
-                  </div>
-                  <span className="text-gray-400">{stat.label}</span>
-                </motion.div>
-              ))}
+          <div className="lg:col-span-3">
+            <div className="relative mb-8">
+              <h4 className="text-sm font-bold text-gray-900 tracking-wide mb-1">QUICK LINKS</h4>
+              <div className="w-8 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500"></div>
             </div>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <motion.div
-              className="flex items-center space-x-2 text-gray-400"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <span>© 2025 Bokobokids Village. Made with</span>
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-              >
-                <Heart className="w-5 h-5 text-red-500 fill-current" />
-              </motion.div>
-              <span>for global citizens.</span>
-            </motion.div>
-
-            <motion.div
-              className="flex space-x-8 text-sm"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              {["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
-                (link) => (
-                  <motion.a
-                    key={link}
-                    href="#"
-                    className="text-gray-400 hover:text-amber-500 transition-colors duration-300"
-                    whileHover={{ y: -2 }}
-                  >
+            <ul className="space-y-4">
+              {quickLinks.map((link) => (
+                <li key={link}>
+                  <a href="#" className="text-sm text-gray-600 hover:text-orange-600 transition-colors duration-200 font-medium">
                     {link}
-                  </motion.a>
-                )
-              )}
-            </motion.div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Programs */}
+          <div className="lg:col-span-3">
+            <div className="relative mb-8">
+              <h4 className="text-sm font-bold text-gray-900 tracking-wide mb-1">PROGRAMS</h4>
+              <div className="w-8 h-0.5 bg-gradient-to-r from-red-500 to-pink-500"></div>
+            </div>
+            <ul className="space-y-4">
+              {programs.map((program) => (
+                <li key={program}>
+                  <a href="#" className="text-sm text-gray-600 hover:text-pink-600 transition-colors duration-200 font-medium">
+                    {program}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Newsletter/Contact */}
+          <div className="lg:col-span-2">
+            <div className="relative mb-8">
+              <h4 className="text-sm font-bold text-gray-900 tracking-wide mb-1">STAY UPDATED</h4>
+              <div className="w-8 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500"></div>
+            </div>
+            
+            <div className="space-y-6">
+              <p className="text-xs text-gray-500 leading-relaxed">
+                Get the latest stories and cultural insights delivered to your inbox.
+              </p>
+              
+              <div className="relative">
+                <button className="w-full bg-gradient-to-r from-gray-800 to-gray-700 text-white px-4 py-3 rounded-full text-xs font-semibold hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+                  <span className="relative z-10">JOIN OUR COMMUNITY</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+                {/* Floating accent */}
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-emerald-400 rounded-full opacity-70"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Decorative separator */}
+        <div className="relative my-16">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-200"></div>
+          </div>
+          <div className="relative flex justify-center">
+            <div className="bg-gray-50 px-6 flex items-center space-x-2">
+              <div className="w-2 h-2 bg-amber-400 rounded-full opacity-60"></div>
+              <div className="w-1 h-1 bg-pink-400 rounded-full opacity-40"></div>
+              <div className="w-2 h-2 bg-emerald-500 rounded-full opacity-60"></div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Bottom section */}
+        <div className="flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0">
+          <div className="flex flex-col lg:flex-row items-center space-y-4 lg:space-y-0 lg:space-x-8">
+            <p className="text-xs text-gray-500 font-medium">
+              © 2025 BOKOBOKIDS. Crafted with care for young minds.
+            </p>
+            <div className="flex items-center space-x-6 text-xs text-gray-400">
+              <a href="#" className="hover:text-gray-600 transition-colors duration-200">Privacy</a>
+              <div className="w-px h-3 bg-gray-300"></div>
+              <a href="#" className="hover:text-gray-600 transition-colors duration-200">Terms</a>
+              <div className="w-px h-3 bg-gray-300"></div>
+              <a href="#" className="hover:text-gray-600 transition-colors duration-200">Accessibility</a>
+            </div>
+          </div>
+          
+          <div className="flex items-center space-x-3 text-xs text-gray-400">
+            <span className="font-medium tracking-wide">Made in Nigeria</span>
+            <div className="w-4 h-3 bg-gradient-to-b from-green-500 via-white to-green-500 rounded-sm border border-gray-200 opacity-60"></div>
           </div>
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-30" />
+      
+      {/* Subtle connecting line art */}
+      <div className="absolute bottom-0 right-0 w-64 h-32 pointer-events-none opacity-20">
+        <svg width="256" height="128" className="absolute bottom-0 right-0">
+          <path 
+            d="M200,100 Q230,50 256,20" 
+            stroke="#F59E0B" 
+            strokeWidth="1" 
+            fill="none"
+            strokeDasharray="3,3"
+          />
+          <circle cx="240" cy="40" r="2" fill="#EC4899" opacity="0.6"/>
+        </svg>
+      </div>
     </footer>
   );
 };

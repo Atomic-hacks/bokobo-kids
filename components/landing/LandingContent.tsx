@@ -1,647 +1,349 @@
-"use client";
+import React from "react";
 
-import React, { useRef, useState, useEffect } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import {
-  Heart,
-  Users,
-  Globe,
-  ArrowRight,
-  Book,
-  Star,
-  Play,
-} from "lucide-react";
-
-const LandingContent = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
+const BokobokidsMission = () => {
   return (
-    <div
-      ref={containerRef}
-      className="bg-gradient-to-b from-amber-50 to-orange-50"
-    >
-      {/* Movement Section */}
-      <MovementSection />
+    <div className="bg-white">
+      {/* Mission Section */}
+      <section className="py-24 px-8 relative overflow-hidden">
+        {/* Refined decorative elements */}
+        <div className="absolute top-24 right-32 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[20px] border-b-emerald-500 opacity-40"></div>
+        <div className="absolute bottom-40 left-24 w-8 h-8 rounded-full border border-orange-400 opacity-30"></div>
+        <div className="absolute top-40 left-1/3 w-2 h-2 bg-pink-400 rounded-full opacity-50"></div>
 
-      {/* Values Grid */}
-      <ValuesSection />
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            {/* Left content - cleaner typography */}
+            <div className="space-y-12">
+              <div className="space-y-6">
+                <h2 className="text-5xl lg:text-6xl font-light leading-[1.1] text-gray-900 tracking-tight">
+                  THE MISSION BEHIND{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500 font-medium">
+                    BOKOBOKIDS
+                  </span>
+                </h2>
 
-      {/* Cultural Heritage */}
-      <CulturalHeritageSection />
+                <div className="w-16 h-0.5 bg-gradient-to-r from-orange-500 to-red-500"></div>
+              </div>
 
-      {/* Book Feature */}
-      <BookFeatureSection />
+              <div className="space-y-8">
+                <h3 className="text-2xl font-light text-gray-800 leading-relaxed">
+                  Building bridges through stories that matter
+                </h3>
 
-      {/* CTA Section */}
-      <CTASection />
+                <div className="space-y-6 text-gray-600 leading-relaxed max-w-lg">
+                  <p className="text-lg">
+                    We create meaningful connections between children and their
+                    heritage through carefully crafted stories that celebrate
+                    African wisdom, culture, and values.
+                  </p>
+
+                  <p className="text-lg">
+                    Every story is a doorway to discovery, helping young minds
+                    explore their identity while building confidence for the
+                    world ahead.
+                  </p>
+                </div>
+              </div>
+
+              <button className="group bg-gradient-to-r from-red-500 to-pink-500 text-white px-12 py-4 rounded-full text-sm font-semibold tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                <span className="relative z-10">DISCOVER OUR STORIES</span>
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              </button>
+            </div>
+
+            {/* Right side - more minimal approach */}
+            <div className="relative h-[600px]">
+              {/* Main quote card - cleaner design */}
+              <div
+                className="absolute top-8 right-0 w-[400px] bg-gray-50 p-10 border border-gray-100"
+                style={{
+                  borderRadius: "24px",
+                  transform: "rotate(0.5deg)",
+                }}
+              >
+                <blockquote className="text-xl font-light text-gray-800 mb-6 leading-relaxed italic">
+                  &quot;If it takes a village to raise a child, it takes a
+                  Bokobokids village to raise global citizens.&quot;
+                </blockquote>
+                <cite className="text-xs font-semibold text-orange-600 uppercase tracking-widest not-italic">
+                  — Our Philosophy
+                </cite>
+              </div>
+
+              {/* Stats card - more premium */}
+              <div
+                className="absolute bottom-16 left-0 w-[300px] bg-white p-8 border border-gray-100 shadow-xl"
+                style={{
+                  borderRadius: "20px",
+                  transform: "rotate(-1deg)",
+                }}
+              >
+                <div className="text-center space-y-3">
+                  <div className="text-4xl font-light text-orange-600">
+                    10,000+
+                  </div>
+                  <div className="w-8 h-0.5 bg-orange-400 mx-auto"></div>
+                  <p className="text-xs font-medium text-gray-600 uppercase tracking-widest">
+                    Children Connected
+                  </p>
+                </div>
+              </div>
+
+              {/* Minimal connecting elements */}
+              <div className="absolute top-32 left-20 w-12 h-12 rounded-full bg-emerald-500 opacity-10"></div>
+              <div className="absolute bottom-32 right-16 w-3 h-3 bg-pink-400 rounded-full opacity-60"></div>
+
+              {/* Subtle line art */}
+              <div className="absolute top-40 left-32 w-[160px] h-[180px] pointer-events-none opacity-10">
+                <svg width="160" height="180">
+                  <path
+                    d="M20,20 Q60,60 120,120 Q130,140 140,160"
+                    stroke="#F59E0B"
+                    strokeWidth="1"
+                    fill="none"
+                    strokeDasharray="2,2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section - More spacious and minimal */}
+      <section className="py-32 px-8 bg-gray-50 relative overflow-hidden">
+        <div className="absolute top-20 left-40 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[16px] border-b-amber-400 opacity-30"></div>
+
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20 max-w-3xl">
+            <h2 className="text-4xl font-light text-gray-900 mb-8 tracking-tight">
+              What guides us
+            </h2>
+            <div className="w-12 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500 mb-8"></div>
+            <p className="text-xl text-gray-500 leading-relaxed font-light">
+              Four principles that shape every story we tell and every
+              connection we make.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16">
+            <div className="space-y-6 group">
+              <h3 className="text-2xl font-light text-gray-900">
+                Cultural pride
+              </h3>
+              <div className="w-8 h-0.5 bg-emerald-500 group-hover:w-12 transition-all duration-300"></div>
+              <p className="text-gray-600 leading-relaxed font-light">
+                Celebrating the richness of African heritage while making it
+                accessible and relevant for today&apos;s children.
+              </p>
+            </div>
+
+            <div className="space-y-6 group">
+              <h3 className="text-2xl font-light text-gray-900">
+                Global perspective
+              </h3>
+              <div className="w-8 h-0.5 bg-orange-500 group-hover:w-12 transition-all duration-300"></div>
+              <p className="text-gray-600 leading-relaxed font-light">
+                Preparing young minds to navigate the world with confidence,
+                rooted in their cultural identity.
+              </p>
+            </div>
+
+            <div className="space-y-6 group">
+              <h3 className="text-2xl font-light text-gray-900">
+                Community connection
+              </h3>
+              <div className="w-8 h-0.5 bg-pink-500 group-hover:w-12 transition-all duration-300"></div>
+              <p className="text-gray-600 leading-relaxed font-light">
+                Building bridges between families worldwide through shared
+                stories and values.
+              </p>
+            </div>
+
+            <div className="space-y-6 group">
+              <h3 className="text-2xl font-light text-gray-900">
+                Timeless wisdom
+              </h3>
+              <div className="w-8 h-0.5 bg-red-500 group-hover:w-12 transition-all duration-300"></div>
+              <p className="text-gray-600 leading-relaxed font-light">
+                Weaving ancient African knowledge into narratives that speak to
+                modern experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Heritage Section - Cleaner grid */}
+      <section className="py-32 px-8 bg-white relative">
+        <div className="absolute bottom-32 right-24 w-8 h-8 rounded-full border border-red-400 opacity-20"></div>
+
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start">
+            <div className="lg:col-span-2 space-y-8">
+              <h2 className="text-4xl font-light text-gray-900 tracking-tight">
+                Stories that{" "}
+                <span className="text-orange-600 font-normal">matter</span>
+              </h2>
+              <div className="w-12 h-0.5 bg-gradient-to-r from-orange-500 to-red-500"></div>
+              <p className="text-xl text-gray-500 leading-relaxed font-light">
+                Each narrative draws from authentic African traditions,
+                carefully adapted to inspire and educate young readers.
+              </p>
+            </div>
+
+            <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="group">
+                <div className="w-16 h-16 bg-orange-600 rounded-full mb-8 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <span className="text-white font-light text-xl">ST</span>
+                </div>
+                <h3 className="text-xl font-light text-gray-900 mb-6">
+                  Sacred narratives
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-light">
+                  Traditional tales that explore the connection between the
+                  physical and spiritual worlds.
+                </p>
+              </div>
+
+              <div className="group">
+                <div className="w-16 h-16 bg-emerald-600 rounded-full mb-8 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <span className="text-white font-light text-xl">CC</span>
+                </div>
+                <h3 className="text-xl font-light text-gray-900 mb-6">
+                  Cultural crafts
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-light">
+                  Stories celebrating the artistry and practical wisdom embedded
+                  in traditional crafts.
+                </p>
+              </div>
+
+              <div className="group">
+                <div className="w-16 h-16 bg-purple-600 rounded-full mb-8 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <span className="text-white font-light text-xl">MH</span>
+                </div>
+                <h3 className="text-xl font-light text-gray-900 mb-6">
+                  Musical heritage
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-light">
+                  Rhythms and melodies that carry African traditions across
+                  continents and generations.
+                </p>
+              </div>
+
+              <div className="group">
+                <div className="w-16 h-16 bg-red-600 rounded-full mb-8 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <span className="text-white font-light text-xl">LW</span>
+                </div>
+                <h3 className="text-xl font-light text-gray-900 mb-6">
+                  Living wisdom
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-light">
+                  Ancient knowledge systems that remain relevant for navigating
+                  modern challenges.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Book Feature - More sophisticated dark section */}
+      <section className="py-32 px-8 bg-gray-900 text-white relative overflow-hidden">
+        <div className="absolute top-24 right-32 w-4 h-4 bg-orange-500 rounded-full opacity-20"></div>
+        <div className="absolute bottom-32 left-32 w-2 h-2 bg-emerald-500 rounded-full opacity-30"></div>
+
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div className="space-y-12">
+              <div className="space-y-6">
+                <h2 className="text-4xl font-light tracking-tight">
+                  The Winds of{" "}
+                  <span className="text-orange-500 font-normal">Napata</span>
+                </h2>
+                <div className="w-12 h-0.5 bg-orange-500"></div>
+                <p className="text-lg text-gray-300 font-light">
+                  Dr. Kheftusa Akhiba Ankh
+                </p>
+              </div>
+
+              <div className="space-y-8 text-gray-300 leading-relaxed font-light">
+                <p className="text-xl">
+                  A transformative journey that bridges ancient African kingdoms
+                  with contemporary identity. Through Mark&apos;s story, young
+                  readers explore themes of heritage, belonging, and
+                  empowerment.
+                </p>
+
+                <p className="text-lg">
+                  Particularly resonant for young people navigating questions of
+                  identity in an interconnected world.
+                </p>
+              </div>
+
+              <div className="flex gap-6 pt-4">
+                <button className="bg-orange-600 text-white px-10 py-4 rounded-full font-medium tracking-wide hover:bg-orange-700 transition-colors duration-200">
+                  Order Now
+                </button>
+                <button className="border border-white text-white px-10 py-4 rounded-full font-medium tracking-wide hover:bg-white hover:text-gray-900 transition-colors duration-200">
+                  Read Sample
+                </button>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div
+                className="bg-gradient-to-br from-orange-600 to-red-600 h-[400px] flex items-center justify-center shadow-2xl relative overflow-hidden"
+                style={{ borderRadius: "24px" }}
+              >
+                <div className="text-center relative z-10">
+                  <div className="w-32 h-40 bg-white bg-opacity-10 mx-auto mb-8 flex items-center justify-center rounded-xl border border-white border-opacity-20">
+                    <span className="text-4xl font-light text-white">W</span>
+                  </div>
+                  <p className="text-lg font-light tracking-wide">
+                    Available Now
+                  </p>
+                </div>
+
+                {/* Subtle overlay pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute top-8 right-8 w-3 h-3 bg-white rounded-full"></div>
+                  <div className="absolute bottom-12 left-12 w-2 h-2 bg-white rounded-full"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - More refined */}
+      <section className="py-32 px-8 bg-gray-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="space-y-8 mb-16">
+            <h2 className="text-5xl font-light text-gray-900 tracking-tight">
+              Start the journey
+            </h2>
+            <div className="w-16 h-0.5 bg-gradient-to-r from-red-500 to-pink-500 mx-auto"></div>
+            <p className="text-xl text-gray-500 leading-relaxed max-w-2xl mx-auto font-light">
+              Join families worldwide in celebrating African heritage through
+              stories that inspire, educate, and connect.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <button className="group bg-gradient-to-r from-red-500 to-pink-500 text-white px-12 py-4 rounded-full text-sm font-semibold tracking-wide shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+              <span className="relative z-10">JOIN OUR COMMUNITY</span>
+              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+            </button>
+            <button className="border border-gray-300 text-gray-700 px-12 py-4 rounded-full text-sm font-semibold tracking-wide hover:border-gray-500 hover:bg-gray-50 transition-all duration-200">
+              EXPLORE STORIES
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
 
-// Movement Section with Earthy Tones
-const MovementSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <section
-      ref={ref}
-      className="py-32 bg-gradient-to-b from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden"
-    >
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 opacity-10">
-        <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-600 to-red-600 blur-3xl" />
-      </div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 opacity-10">
-        <div className="w-full h-full rounded-full bg-gradient-to-br from-amber-600 to-orange-600 blur-3xl" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <motion.div
-          className="text-center max-w-5xl mx-auto"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1 }}
-        >
-          {/* African-inspired decorative element */}
-          <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-orange-600 to-red-600 mx-auto mb-8 rounded-full"
-            initial={{ width: 0 }}
-            animate={isInView ? { width: 96 } : { width: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          />
-
-          <motion.h2
-            className="text-6xl lg:text-7xl font-bold mb-12 leading-tight"
-            style={{
-              color: "#8B4513",
-              fontFamily: "serif",
-            }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            Join the{" "}
-            <span className="bg-gradient-to-r from-orange-600 via-red-600 to-amber-600 bg-clip-text text-transparent">
-              Bokobokids
-            </span>{" "}
-            Movement
-          </motion.h2>
-
-          <motion.p
-            className="text-2xl text-amber-800 mb-12 leading-relaxed font-light"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 1, delay: 0.4 }}
-          >
-            Joining the Bokobokids movement means joining a welcoming community
-            of families who desire to empower children with indestructible tools
-            to promote inner well being through African wisdom.
-          </motion.p>
-
-          <motion.div
-            className="bg-gradient-to-r from-orange-100 via-amber-50 to-yellow-100 p-12  border-2 border-orange-200 shadow-2xl mb-16 relative overflow-hidden"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={
-              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
-            }
-            transition={{ duration: 1, delay: 0.6 }}
-          >
-            {/* African pattern background */}
-            <div
-              className="absolute inset-0 opacity-5"
-              style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D97706'%3E%3Cpath d='M50 50m-20 0a20 20 0 1 1 40 0a20 20 0 1 1 -40 0M25 25l50 50M75 25l-50 50'/%3E%3C/g%3E%3C/svg%3E")`,
-                backgroundSize: "100px 100px",
-              }}
-            />
-
-            <div className="relative z-10">
-              <blockquote className="text-3xl lg:text-4xl font-medium text-amber-900 italic leading-relaxed mb-6">
-               &quot;If it takes a village to raise a child, it will take a
-                Bokobokids village to raise the next generation of global
-                citizens.&quot;
-              </blockquote>
-              <cite className="text-orange-700 font-bold text-lg">
-                — Bokobokids Village Philosophy
-              </cite>
-            </div>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
-// Values Section with Cultural Colors
-const ValuesSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const values = [
-    {
-      icon: Heart,
-      title: "Inner Well-being",
-      description:
-        "Empowering children with indestructible tools to promote mental and emotional health through ancient African wisdom and practices.",
-      color: "from-red-700 to-orange-600",
-      bgColor: "bg-gradient-to-br from-red-50 to-orange-50",
-      borderColor: "border-red-200",
-    },
-    {
-      icon: Users,
-      title: "Ubuntu Community",
-      description:
-        "Join families worldwide embracing the Ubuntu philosophy - 'I am because we are' - fostering collective growth and support.",
-      color: "from-amber-700 to-orange-700",
-      bgColor: "bg-gradient-to-br from-amber-50 to-orange-50",
-      borderColor: "border-amber-200",
-    },
-    {
-      icon: Globe,
-      title: "Global Citizens",
-      description:
-        "Preparing children to navigate the world with confidence, rooted in African values while embracing global perspectives.",
-      color: "from-orange-700 to-red-700",
-      bgColor: "bg-gradient-to-br from-orange-50 to-red-50",
-      borderColor: "border-orange-200",
-    },
-    {
-      icon: Book,
-      title: "Ancient Wisdom",
-      description:
-        "Connecting modern children to timeless African knowledge, proverbs, and values that have guided humanity for millennia.",
-      color: "from-yellow-700 to-amber-700",
-      bgColor: "bg-gradient-to-br from-yellow-50 to-amber-50",
-      borderColor: "border-yellow-200",
-    },
-  ];
-
-  return (
-    <section
-      ref={ref}
-      className="py-32 bg-gradient-to-b from-yellow-50 to-orange-50"
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 1 }}
-        >
-          <h2
-            className="text-5xl font-bold text-amber-900 mb-6"
-            style={{ fontFamily: "serif" }}
-          >
-            Our Core Values
-          </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-orange-600 to-red-600 mx-auto rounded-full" />
-        </motion.div>
-
-        <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8">
-          {values.map((value, index) => (
-            <motion.div
-              key={value.title}
-              className={`${value.bgColor}  p-10 shadow-xl border-2 ${value.borderColor} hover:shadow-2xl transition-all duration-500 relative overflow-hidden group`}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-            >
-              {/* Decorative pattern */}
-              <div
-                className="absolute top-0 right-0 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D97706'%3E%3Ccircle cx='30' cy='30' r='15'/%3E%3Ccircle cx='15' cy='15' r='7'/%3E%3Ccircle cx='45' cy='15' r='7'/%3E%3Ccircle cx='15' cy='45' r='7'/%3E%3Ccircle cx='45' cy='45' r='7'/%3E%3C/g%3E%3C/svg%3E")`,
-                  backgroundSize: "60px 60px",
-                }}
-              />
-
-              <div
-                className={`w-20 h-20  bg-gradient-to-br ${value.color} flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform duration-300`}
-              >
-                <value.icon className="w-10 h-10 text-white" />
-              </div>
-
-              <h3
-                className="text-2xl font-bold text-amber-900 mb-6"
-                style={{ fontFamily: "serif" }}
-              >
-                {value.title}
-              </h3>
-
-              <p className="text-amber-800 leading-relaxed text-lg">
-                {value.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Cultural Heritage Section with Museum Feel
-const CulturalHeritageSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  const artifacts = [
-    {
-      icon: "🎭",
-      title: "Sacred Masks & Sculptures",
-      description:
-        "Each mask tells a story, representing spirits, ancestors, and the deep connection between the physical and spiritual worlds in African culture.",
-      bgGradient: "from-orange-600 to-red-700",
-    },
-    {
-      icon: "🏺",
-      title: "Traditional Pottery & Crafts",
-      description:
-        "Handcrafted vessels and tools that showcase the artistic mastery and practical wisdom of African artisans throughout history.",
-      bgGradient: "from-amber-600 to-orange-700",
-    },
-    {
-      icon: "🎵",
-      title: "Musical Heritage",
-      description:
-        "Drums, flutes, and stringed instruments that carry the rhythms and melodies of African traditions, connecting hearts across continents.",
-      bgGradient: "from-red-600 to-orange-700",
-    },
-  ];
-
-  return (
-    <section
-      ref={ref}
-      className="py-32 bg-gradient-to-b from-orange-50 via-red-50 to-orange-50 relative overflow-hidden"
-    >
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D97706' fill-opacity='0.1'%3E%3Cpath d='M100 0L150 50L100 100L50 50z M0 100L50 150L100 100L50 50z M100 100L150 150L200 100L150 50z M100 200L150 150L100 100L50 150z'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: "200px 200px",
-          }}
-          className="w-full h-full"
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 1 }}
-        >
-          <h2
-            className="text-6xl font-bold text-amber-900 mb-8"
-            style={{ fontFamily: "serif" }}
-          >
-            Cultural Heritage Museum
-          </h2>
-          <div className="w-40 h-1 bg-gradient-to-r from-orange-600 to-red-600 mx-auto rounded-full mb-8" />
-          <p className="text-2xl text-amber-800 max-w-4xl mx-auto leading-relaxed font-light">
-            Explore the rich tapestry of African cultural artifacts that tell
-            the stories of our ancestors and inspire the next generation of
-            global citizens.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-12 mb-20">
-          {artifacts.map((artifact, index) => (
-            <motion.div
-              key={artifact.title}
-              className="group relative"
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: index * 0.3 }}
-            >
-              <div className="bg-white  p-10 shadow-xl border border-orange-100 hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-4 relative overflow-hidden">
-                {/* Decorative corner element */}
-                <div
-                  className={`absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br ${artifact.bgGradient} rounded-full opacity-10 group-hover:opacity-20 transition-opacity`}
-                />
-
-                <div className="text-8xl mb-8 text-center group-hover:scale-110 transition-transform duration-300">
-                  {artifact.icon}
-                </div>
-
-                <h3
-                  className="text-2xl font-bold text-amber-900 mb-6 text-center"
-                  style={{ fontFamily: "serif" }}
-                >
-                  {artifact.title}
-                </h3>
-
-                <p className="text-amber-800 leading-relaxed text-center text-lg">
-                  {artifact.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.div
-          className="bg-gradient-to-r from-orange-600 via-red-600 to-amber-600  p-12 text-white text-center shadow-2xl relative overflow-hidden"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={
-            isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
-          }
-          transition={{ duration: 1, delay: 0.8 }}
-        >
-          {/* Background pattern */}
-          <div
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='white'%3E%3Cpath d='M40 0L60 20L40 40L20 20z M0 40L20 60L40 40L20 20z M40 40L60 60L80 40L60 20z M40 80L60 60L40 40L20 60z'/%3E%3C/g%3E%3C/svg%3E")`,
-              backgroundSize: "80px 80px",
-            }}
-          />
-
-          <div className="relative z-10">
-            <h3
-              className="text-4xl font-bold mb-6"
-              style={{ fontFamily: "serif" }}
-            >
-              Living Heritage
-            </h3>
-            <p className="text-xl opacity-90 max-w-5xl mx-auto leading-relaxed">
-              These artifacts are not merely historical objects but living
-              symbols of a rich cultural heritage that continues to inspire and
-              educate children about their roots and the wisdom of their
-              ancestors.
-            </p>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
-// Book Feature Section with Earthy Design
-const BookFeatureSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <section
-      ref={ref}
-      className="py-32 bg-gradient-to-b from-orange-50 to-amber-50"
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Book Display */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 1 }}
-          >
-            <div className="relative group">
-              {/* Shadow book */}
-              <div className="w-full h-[500px] bg-gradient-to-br from-orange-600 via-red-600 to-amber-700  shadow-2xl transform rotate-3 group-hover:rotate-6 transition-all duration-500"></div>
-
-              {/* Main book */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-orange-100  shadow-xl border-2 border-orange-200 p-12 flex items-center justify-center group-hover:-translate-y-2 transition-all duration-500">
-                <div className="text-center">
-                  <div className="text-8xl mb-6">📚</div>
-                  <h3
-                    className="text-3xl font-bold text-amber-900 mb-2"
-                    style={{ fontFamily: "serif" }}
-                  >
-                    The Winds of
-                  </h3>
-                  <h3
-                    className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4"
-                    style={{ fontFamily: "serif" }}
-                  >
-                    NAPATA
-                  </h3>
-                  <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-red-600 mx-auto rounded-full mb-4" />
-                  <p className="text-amber-700 text-lg font-medium">
-                    Dr. Kheftusa Akhiba Ankh
-                  </p>
-                </div>
-              </div>
-
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-gold-400 to-amber-500 rounded-full opacity-20 animate-pulse"></div>
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-red-400 to-orange-500 rounded-full opacity-20 animate-pulse delay-1000"></div>
-            </div>
-          </motion.div>
-
-          {/* Book Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <div className="mb-8">
-              <div className="w-20 h-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-full mb-6" />
-              <h2
-                className="text-5xl font-bold text-amber-900 mb-8 leading-tight"
-                style={{ fontFamily: "serif" }}
-              >
-               &quot;The Winds of Napata&quot; And Its Modern Relevance
-              </h2>
-            </div>
-
-            <div className="space-y-6 text-amber-800 leading-relaxed mb-10 text-lg">
-              <p>
-                Dr. Kheftusa Akhiba Ankh&apos;s <em>The Winds of Napata</em> is a
-                poignant tale that weaves African history, culture, and identity
-                into an immersive narrative designed to inspire and empower.
-              </p>
-
-              <p>
-                Through the lens of a young boy, Mark, and his journey between
-                modern-day Manchester and his ancestral African roots, the book
-                merges dreams, folklore, and historical insights.
-              </p>
-
-              <p>
-                Set against the backdrop of historical kingdoms like Napata and
-                Mali, the story rekindles pride in African heritage while
-                addressing modern societal challenges.
-              </p>
-            </div>
-
-            <div className="bg-gradient-to-r from-amber-100 to-orange-100 p-8  border-2 border-amber-200 mb-10 relative overflow-hidden">
-              {/* Decorative pattern */}
-              <div
-                className="absolute top-0 right-0 w-24 h-24 opacity-5"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D97706'%3E%3Ccircle cx='20' cy='20' r='10'/%3E%3C/g%3E%3C/svg%3E")`,
-                  backgroundSize: "40px 40px",
-                }}
-              />
-
-              <div className="relative z-10">
-                <div className="flex items-start">
-                  <Star className="w-6 h-6 text-amber-600 mr-3 mt-1 flex-shrink-0" />
-                  <p className="text-amber-800 font-medium text-lg">
-                    <strong>Special Focus:</strong> Particularly relevant for
-                    young men facing societal challenges, with over 7 million
-                    men in the U.S. experiencing unemployment and
-                    marginalization.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-6">
-              <motion.button
-                className="bg-gradient-to-r from-orange-600 to-red-600 text-white px-10 py-5 rounded-full font-semibold text-lg flex items-center justify-center hover:shadow-2xl transition-all duration-300 group"
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Buy the Book
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-
-              <motion.button
-                className="border-2 border-amber-600 text-amber-700 px-10 py-5 rounded-full font-semibold text-lg hover:bg-amber-50 transition-all duration-300 flex items-center justify-center"
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Read Preview
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// CTA Section with African Night Sky Theme
-const CTASection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  return (
-    <section
-      ref={ref}
-      className="py-32 bg-gradient-to-b from-amber-900 via-red-900 to-orange-900 relative overflow-hidden"
-    >
-      {/* Starry night pattern */}
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFF'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3Ccircle cx='80' cy='20' r='2'/%3E%3Ccircle cx='40' cy='40' r='1'/%3E%3Ccircle cx='90' cy='50' r='1'/%3E%3Ccircle cx='10' cy='70' r='2'/%3E%3Ccircle cx='60' cy='80' r='1'/%3E%3Ccircle cx='30' cy='90' r='1'/%3E%3C/g%3E%3C/svg%3E")`,
-          backgroundSize: "100px 100px",
-        }}
-      />
-
-      {/* Floating geometric elements */}
-      <div className="absolute top-20 left-20 w-32 h-32 opacity-10">
-        <div
-          className="w-full h-full border-4 border-white rounded-full animate-spin"
-          style={{ animationDuration: "20s" }}
-        />
-      </div>
-      <div className="absolute bottom-20 right-20 w-24 h-24 opacity-10">
-        <div className="w-full h-full bg-white transform rotate-45 animate-pulse" />
-      </div>
-      <div className="absolute top-1/2 left-10 w-16 h-16 opacity-10">
-        <div className="w-full h-full border-2 border-white transform rotate-45 animate-bounce" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1 }}
-        >
-          {/* Decorative element */}
-          <motion.div
-            className="w-32 h-1 bg-gradient-to-r from-amber-400 to-orange-400 mx-auto mb-8 rounded-full"
-            initial={{ width: 0 }}
-            animate={isInView ? { width: 128 } : { width: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          />
-
-          <h2
-            className="text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight"
-            style={{ fontFamily: "serif" }}
-          >
-            Ready to Begin the Journey?
-          </h2>
-
-          <p className="text-2xl text-amber-200 mb-16 max-w-4xl mx-auto leading-relaxed font-light">
-            Start your family&apos;s journey into African wisdom and cultural
-            empowerment. Together, we&apos;ll build a stronger future for our
-            children through the power of ancestral knowledge.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-8 justify-center mb-16">
-            <motion.button
-              className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-12 py-6 rounded-full font-semibold text-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center group"
-              whileHover={{
-                scale: 1.05,
-                y: -5,
-                boxShadow: "0 25px 50px rgba(245, 158, 11, 0.4)",
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Join Our Community
-              <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
-
-            <motion.button
-              className="border-2 border-amber-400 text-amber-200 px-12 py-6 rounded-full font-semibold text-xl backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
-              whileHover={{
-                scale: 1.05,
-                y: -5,
-                backgroundColor: "rgba(255,255,255,0.1)",
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Explore Resources
-            </motion.button>
-          </div>
-
-          {/* Community stats */}
-          <motion.div
-            className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 1, delay: 0.8 }}
-          >
-            {[
-              { number: "10,000+", label: "Families Connected" },
-              { number: "50+", label: "Cultural Stories" },
-              { number: "25", label: "Countries Reached" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div
-                  className="text-4xl font-bold text-amber-400 mb-2"
-                  style={{ fontFamily: "serif" }}
-                >
-                  {stat.number}
-                </div>
-                <div className="text-amber-200 font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </div>
-
-      {/* Bottom decorative wave */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 opacity-20">
-        <svg viewBox="0 0 1200 120" className="w-full h-full">
-          <path
-            d="M0,60 C300,120 600,0 900,60 C1050,90 1150,30 1200,60 L1200,120 L0,120 Z"
-            fill="rgba(255,255,255,0.1)"
-          />
-        </svg>
-      </div>
-    </section>
-  );
-};
-
-export default LandingContent;
+export default BokobokidsMission;
